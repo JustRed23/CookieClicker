@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CookieClicker.investment;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -17,6 +18,11 @@ namespace CookieClicker
         public static double CPS;
 
         private static double previousCookies = 0;
+
+        /// <summary>
+        /// The list of all investments.
+        /// </summary>
+        private static List<Investment> investments = new List<Investment>();
 
         /// <summary>
         /// The main game loop timer.
@@ -60,14 +66,34 @@ namespace CookieClicker
             timer = null;
         }
 
+        public static void AddInvestment(Investment investment)
+        {
+            investments.Add(investment);
+        }
+
         /// <summary>
-        /// Called when the cookie image is clicked.
+        /// Adds cookies to the total amount of cookies.
         /// </summary>
-        public static void CookieClicked()
+        /// <param name="amount">The amount of cookies to add</param>
+        public static void AddCookies(double amount)
         {
             if (timer == null) return;
+            if (amount < 0) throw new ArgumentOutOfRangeException(nameof(amount), "Amount must be positive.");
 
-            Cookies++;
+            Cookies += amount;
+            UpdateComponents();
+        }
+
+        /// <summary>
+        /// Removes cookies to the total amount of cookies.
+        /// </summary>
+        /// <param name="amount">The amount of cookies to remove</param>
+        public static void RemoveCookies(double amount)
+        {
+            if (timer == null) return;
+            if (amount < 0) throw new ArgumentOutOfRangeException(nameof(amount), "Amount must be positive.");
+
+            Cookies -= amount;
             UpdateComponents();
         }
 
@@ -75,10 +101,12 @@ namespace CookieClicker
         {
             //1 tick = 10ms
 
-            //Update all components, we only do this every second to save performance
+            //Generate cookies from investments
+            investments.ForEach(i => i.Generate());
+
+            //Calculate CPS every second
             if (ticks % 100 == 0)
             {
-                //Calculate CPS
                 CPS = Cookies - previousCookies;
                 previousCookies = Cookies;
 

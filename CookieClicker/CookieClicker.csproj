@@ -56,6 +56,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="GameCore.cs" />
+    <Compile Include="investment\Investment.cs" />
+    <Compile Include="investment\items\Cursor.cs" />
+    <Compile Include="investment\items\Factory.cs" />
+    <Compile Include="investment\items\Farm.cs" />
+    <Compile Include="investment\items\Grandma.cs" />
+    <Compile Include="investment\items\Mine.cs" />
     <Compile Include="References.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

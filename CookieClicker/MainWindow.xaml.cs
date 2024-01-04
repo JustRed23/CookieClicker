@@ -1,18 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CookieClicker.investment.items;
+using System;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace CookieClicker
 {
@@ -52,6 +41,13 @@ namespace CookieClicker
             References.COOKIE_IMAGE.MouseUp += (s, ev) => Cookie_Released();
             References.COOKIE_IMAGE.MouseLeave += (s, ev) => Cookie_Released();
 
+            //Add all investments
+            GameCore.AddInvestment(new Cursor());
+            GameCore.AddInvestment(new Grandma());
+            GameCore.AddInvestment(new Farm());
+            GameCore.AddInvestment(new Mine());
+            GameCore.AddInvestment(new Factory());
+
             //Set up the game
             GameCore.Init();
         }
@@ -69,7 +65,7 @@ namespace CookieClicker
             scale.ScaleX = 0.8;
             scale.ScaleY = 0.8;
 
-            GameCore.CookieClicked();
+            GameCore.AddCookies(1);
         }
 
         private void Cookie_Released()
