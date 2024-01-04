@@ -123,6 +123,7 @@ namespace CookieClicker
             {
                 References.COOKIES.Text = Formatter.FormatCookies(Cookies, null);
                 References.CPS.Text = Formatter.FormatCookies(CPS, "CPS");
+                MainWindow.Instance.Title = "Cookie Clicker (" + Formatter.FormatCookies(Cookies, null) + ")";
             });
         }
     }
