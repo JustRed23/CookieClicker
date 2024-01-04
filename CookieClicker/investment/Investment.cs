@@ -29,7 +29,7 @@ namespace CookieClicker.investment
 
         public void Generate()
         {
-            GameCore.AddCookies(amount * multiplier);
+            if (amount > 0) GameCore.AddCookies(amount * multiplier);
         }
 
         //TODO
