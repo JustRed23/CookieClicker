@@ -40,6 +40,9 @@ namespace CookieClicker
         /// </summary>
         private void Setup(object sender, RoutedEventArgs e)
         {
+            //Set the background
+            this.Background = new ImageBrush(Assets.BACKGROUND);
+
             //Set up the cookie image
             References.COOKIE_IMAGE.Source = Assets.COOKIE;
 

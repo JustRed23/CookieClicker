@@ -24,14 +24,14 @@ namespace CookieClicker.investment
             price.Text = Formatter.FormatCookies(investment.price, null);
 
             bool hasEnough = investment.price <= GameCore.Cookies;
-            price.Foreground = hasEnough ? Brushes.Black : Brushes.Red;
+            price.Foreground = hasEnough ? count.Foreground : Brushes.Red;
         }
 
         public void Create(Panel parent)
         {
             panel = new DockPanel();
             panel.Margin = new Thickness(0, 0, 0, 5);
-            panel.Background = Brushes.AliceBlue;
+            panel.Background = new SolidColorBrush(Color.FromRgb(101, 67, 33));
             panel.MouseLeftButtonDown += (s, e) =>
             {
                 if (investment.price <= GameCore.Cookies) investment.Buy();
@@ -42,7 +42,7 @@ namespace CookieClicker.investment
             panel.ToolTip = toolTip;
 
             Image image = new Image();
-            image.Source = Assets.GetImage("investments/" + investment.name + ".png");
+            image.Source = Assets.GetImage("investments/" + investment.name.ToLower() + ".png");
             image.Width = 50;
             image.Height = 50;
             image.Margin = new Thickness(2);

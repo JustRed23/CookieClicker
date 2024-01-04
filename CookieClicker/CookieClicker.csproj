@@ -110,7 +110,16 @@
     <Resource Include="assets\default\cookie.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="assets\default\investment\" />
+    <Resource Include="assets\default\investments\mine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\default\bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\default\investments\cursor.png" />
+    <Resource Include="assets\default\investments\factory.png" />
+    <Resource Include="assets\default\investments\farm.png" />
+    <Resource Include="assets\default\investments\grandma.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

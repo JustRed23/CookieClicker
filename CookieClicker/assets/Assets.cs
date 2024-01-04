@@ -10,6 +10,7 @@ namespace CookieClicker.assets
         private static readonly string PACK_URL = "pack://application:,,,";
         private static string currentTexturePack = "default";
 
+        public static BitmapImage BACKGROUND;
         public static BitmapImage COOKIE;
         public static BitmapImage SHOP;
 
@@ -22,6 +23,7 @@ namespace CookieClicker.assets
         {
             currentTexturePack = texturePack;
 
+            BACKGROUND = LoadImageOrDefault("bg.png");
             COOKIE = LoadImageOrDefault("cookie.png");
             //SHOP = LoadImageOrDefault("shop.png");
         }
@@ -48,6 +50,7 @@ namespace CookieClicker.assets
             {
                 return new BitmapImage(new Uri($"{PACK_URL}/assets/{currentTexturePack}/{image}"));
             } catch (IOException) {
+                Debug.WriteLine($"Could not find image {image} in texture pack {currentTexturePack}. Returning null.");
                 return null;
             }
         }

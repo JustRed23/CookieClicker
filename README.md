@@ -10,7 +10,7 @@ A pretty basic WPF project for my school
 
 ### Iteration 1
 - [X] CC01
-- [ ] CC02
+- [X] CC02
 - [X] CC03
 - [X] CC04
 - [X] CC05

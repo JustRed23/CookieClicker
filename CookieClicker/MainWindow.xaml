@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CookieClicker"
         mc:Ignorable="d"
-        Title="Cookie Clicker" Width="360" Height="640" MinWidth="360" MinHeight="640" Icon="/assets/default/cookie.png"  Loaded="Setup" Closing="Shutdown">
+        Title="Cookie Clicker" Width="360" Height="640" MinWidth="360" MinHeight="640" Icon="/assets/default/cookie.png"  Loaded="Setup" Closing="Shutdown" Foreground="Bisque">
     <Grid>
         <Grid Name="MainGrid">
             <Grid.RowDefinitions>
