@@ -17,9 +17,9 @@ A pretty basic WPF project for my school
 - [X] CC06
 - [X] CC07
 - [X] CC08
-- [ ] CC09
-- [ ] CC10
-- [ ] CC11
+- [X] CC09
+- [X] CC10
+- [X] CC11
 - [X] CC12
 - [X] CC13
 - [X] CC14

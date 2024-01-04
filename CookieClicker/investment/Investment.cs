@@ -21,6 +21,8 @@ namespace CookieClicker.investment
         protected double initialPrice = 0;
         protected double multiplier = 1;
 
+        public double cookiesPerSecond = 0;
+
         public Investment(string name, double initialPrice, double multiplier)
         {
             this.name = name;
@@ -30,6 +32,8 @@ namespace CookieClicker.investment
             this.initialPrice = initialPrice;
             this.price = initialPrice;
             this.multiplier = multiplier;
+
+            this.cookiesPerSecond = 100 * multiplier;
         }
 
         public void Create()
