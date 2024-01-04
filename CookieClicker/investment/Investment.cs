@@ -11,20 +11,31 @@ namespace CookieClicker.investment
 {
     internal abstract class Investment
     {
-        private string name;
+        private InvestmentButton button;
+        private InvestmentCategory category;
 
-        protected int amount = 0;
+        public string name;
+        public int amount = 0;
+        public double price = 0;
+
         protected double initialPrice = 0;
-        protected double price = 0;
-
         protected double multiplier = 1;
 
         public Investment(string name, double initialPrice, double multiplier)
         {
             this.name = name;
+            this.button = new InvestmentButton(this);
+            this.category = new InvestmentCategory(this);
+
             this.initialPrice = initialPrice;
             this.price = initialPrice;
             this.multiplier = multiplier;
+        }
+
+        public void Create()
+        {
+            button.Create(References.INVESTMENTS);
+            category.Create(References.CATEGORIES);
         }
 
         public void Generate()
@@ -32,8 +43,14 @@ namespace CookieClicker.investment
             if (amount > 0) GameCore.AddCookies(amount * multiplier);
         }
 
+        public void Update()
+        {
+            button.Update();
+            category.Update();
+        }
+
         //TODO
-        private void Buy()
+        public void Buy()
         {
             GameCore.RemoveCookies(price);
             amount++;

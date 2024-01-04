@@ -58,6 +58,8 @@
     <Compile Include="Formatter.cs" />
     <Compile Include="GameCore.cs" />
     <Compile Include="investment\Investment.cs" />
+    <Compile Include="investment\InvestmentButton.cs" />
+    <Compile Include="investment\InvestmentCategory.cs" />
     <Compile Include="investment\items\Cursor.cs" />
     <Compile Include="investment\items\Factory.cs" />
     <Compile Include="investment\items\Farm.cs" />
@@ -105,6 +107,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="assets\cookie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="assets\investment\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
