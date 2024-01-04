@@ -4,32 +4,33 @@ A pretty basic WPF project for my school
 ## TODO
 - [X] Add a `README.md` file
 - [ ] Add textures
-- [ ] Texturepack system
+- [X] Texturepack system
+- [ ] Add more documentation
 
 ## Tasks
 
 ### Iteration 1
-- [X] CC01
-- [X] CC02
-- [X] CC03
-- [X] CC04
-- [X] CC05
-- [X] CC06
-- [X] CC07
-- [X] CC08
-- [X] CC09
-- [X] CC10
-- [X] CC11
-- [X] CC12
-- [X] CC13
-- [X] CC14
-- [X] CC15
-- [X] CC16
+- [X] [CC01](https://github.com/JustRed23/CookieClicker/commit/48dd25023b788edd083c0c639ffa85771154e0a0)
+- [X] [CC02](https://github.com/JustRed23/CookieClicker/commit/ddc9349e632cecf2ca64592b3a98a65e81385d87)
+- [X] [CC03](https://github.com/JustRed23/CookieClicker/commit/48dd25023b788edd083c0c639ffa85771154e0a0)
+- [X] [CC04](https://github.com/JustRed23/CookieClicker/commit/48dd25023b788edd083c0c639ffa85771154e0a0)
+- [X] [CC05](https://github.com/JustRed23/CookieClicker/commit/48dd25023b788edd083c0c639ffa85771154e0a0)
+- [X] [CC06](https://github.com/JustRed23/CookieClicker/commit/48dd25023b788edd083c0c639ffa85771154e0a0)
+- [X] [CC07](https://github.com/JustRed23/CookieClicker/commit/48dd25023b788edd083c0c639ffa85771154e0a0)
+- [X] [CC08](https://github.com/JustRed23/CookieClicker/commit/a8dd164b72ecf160029fcd44b574d3406e7a9027)
+- [X] [CC09](https://github.com/JustRed23/CookieClicker/commit/072505cc172f2a9ac1a9eeb7b4004f7086bf737a)
+- [X] [CC10](https://github.com/JustRed23/CookieClicker/commit/072505cc172f2a9ac1a9eeb7b4004f7086bf737a)
+- [X] [CC11](https://github.com/JustRed23/CookieClicker/commit/072505cc172f2a9ac1a9eeb7b4004f7086bf737a)
+- [X] [CC12](https://github.com/JustRed23/CookieClicker/commit/a24570a3a062de07c96ec63e210777e5ac2ca0a7)
+- [X] [CC13](https://github.com/JustRed23/CookieClicker/commit/0da070f68fc0f5fb1f0264930b904b0c4bc449d5)
+- [X] [CC14](https://github.com/JustRed23/CookieClicker/commit/0da070f68fc0f5fb1f0264930b904b0c4bc449d5)
+- [X] [CC15](https://github.com/JustRed23/CookieClicker/commit/f5166b1557660820ef151178a173c3e263c3d26b)
+- [X] [CC16](https://github.com/JustRed23/CookieClicker/commit/f9aa59b502b5c862f9c3fb7338018598ebb9b75a)
 
 ### Iteration 2
-- [X] CC17
+- [X] [CC17](https://github.com/JustRed23/CookieClicker/commit/f5166b1557660820ef151178a173c3e263c3d26b)
 	- Done in Iteration 1
-- [X] CC18
+- [X] [CC18](https://github.com/JustRed23/CookieClicker/commit/f5166b1557660820ef151178a173c3e263c3d26b)
 	- Done in Iteration 1
 - [ ] CC19
 - [ ] CC20
