@@ -14,8 +14,8 @@
         </Grid.RowDefinitions>
 
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-            <TextBlock Name="TxtCookies" FontSize="48" Margin="0,0,0,10" Width="200" HorizontalAlignment="Center" TextAlignment="Center"/>
-            <TextBlock Name="TxtCPS" FontSize="24" Width="200" HorizontalAlignment="Center" TextAlignment="Center"/>
+            <TextBlock Name="TxtCookies" FontSize="32" FontWeight="SemiBold" Width="360" HorizontalAlignment="Center" TextAlignment="Center"/>
+            <TextBlock Name="TxtCPS" FontSize="24" Width="360" HorizontalAlignment="Center" TextAlignment="Center"/>
         </StackPanel>
 
         <!-- Cookie Image -->
