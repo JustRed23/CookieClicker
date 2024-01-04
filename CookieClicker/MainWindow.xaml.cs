@@ -1,6 +1,7 @@
 ﻿using CookieClicker.investment.items;
 using System;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media;
 
 namespace CookieClicker
@@ -26,6 +27,12 @@ namespace CookieClicker
             InitializeComponent();
         }
 
+        public void ShowWindow(Grid window)
+        {
+            References.ALL_GRIDS.ForEach(g => g.Visibility = Visibility.Hidden);
+            window.Visibility = Visibility.Visible;
+        }
+
         /// <summary>
         /// Called when the window is loaded. Starts main game loop.
         /// </summary>
@@ -40,6 +47,10 @@ namespace CookieClicker
             References.COOKIE_IMAGE.MouseDown += (s, ev) => Cookie_Pressed();
             References.COOKIE_IMAGE.MouseUp += (s, ev) => Cookie_Released();
             References.COOKIE_IMAGE.MouseLeave += (s, ev) => Cookie_Released();
+
+            //Set up shop buttons
+            References.SHOP_BUTTON.Click += (s, ev) => ShowWindow(References.SHOP);
+            References.CLOSE_BUTTON.Click += (s, ev) => ShowWindow(References.MAINWINDOW);
 
             //Add all investments
             GameCore.AddInvestment(new Cursor());

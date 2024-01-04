@@ -7,21 +7,40 @@
         mc:Ignorable="d"
         Title="Cookie Clicker" Width="360" Height="640" MinWidth="360" MinHeight="640" Loaded="Setup" Closing="Shutdown">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="1*"/>
-        </Grid.RowDefinitions>
+        <Grid Name="MainGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
 
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-            <TextBlock Name="TxtCookies" FontSize="32" FontWeight="SemiBold" Width="360" HorizontalAlignment="Center" TextAlignment="Center"/>
-            <TextBlock Name="TxtCPS" FontSize="24" Width="360" HorizontalAlignment="Center" TextAlignment="Center"/>
-        </StackPanel>
+            <!-- Header -->
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Name="TxtCookies" FontSize="32" FontWeight="SemiBold" Width="360" HorizontalAlignment="Center" TextAlignment="Center"/>
+                <TextBlock Name="TxtCPS" FontSize="24" Width="360" HorizontalAlignment="Center" TextAlignment="Center"/>
+            </StackPanel>
 
-        <!-- Cookie Image -->
-        <Image Grid.Row="1" Name="ImgCookie" Source="assets/cookie.png" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <!-- Cookie Image -->
+            <Image Grid.Row="1" Name="ImgCookie" Source="assets/cookie.png" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-        <!-- Shop Button -->
-        <Button Grid.Row="2" Name="BtnShop" Content="Shop" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="60" Height="60" Margin="0,0,10,10" />
+            <!-- Shop Button -->
+            <Button Grid.Row="2" Name="BtnShop" Content="Shop" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="60" Height="60" Margin="0,0,10,10" />
+        </Grid>
+        
+        <Grid Name="ShopGrid" Visibility="Hidden">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Header -->
+            <TextBlock Grid.Row="0" FontSize="48" FontWeight="SemiBold" Width="360" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" Text="Shop"/>
+            <Button Grid.Row="0" Name="BtnCloseShop" Content="Close" HorizontalAlignment="Right" VerticalAlignment="Top" Width="60" Height="60" Margin="0,10,10,0"/>
+        
+            <!-- Investments -->
+            
+            <!-- Categories -->
+        </Grid>
     </Grid>
 </Window>
