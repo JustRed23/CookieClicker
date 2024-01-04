@@ -1,25 +1,36 @@
 # Cookie Clicker
 A pretty basic WPF project for my school
 
+## TODO
+- [X] Add a `README.md` file
+- [ ] Add textures
+- [ ] Texturepack system
+
 ## Tasks
-- [ ] CC01
+
+### Iteration 1
+- [X] CC01
 - [ ] CC02
-- [ ] CC03
-- [ ] CC04
-- [ ] CC05
-- [ ] CC06
-- [ ] CC07
-- [ ] CC08
+- [X] CC03
+- [X] CC04
+- [X] CC05
+- [X] CC06
+- [X] CC07
+- [X] CC08
 - [ ] CC09
 - [ ] CC10
 - [ ] CC11
-- [ ] CC12
-- [ ] CC13
-- [ ] CC14
-- [ ] CC15
-- [ ] CC16
-- [ ] CC17
-- [ ] CC18
+- [X] CC12
+- [X] CC13
+- [X] CC14
+- [X] CC15
+- [X] CC16
+
+### Iteration 2
+- [X] CC17
+	- Done in Iteration 1
+- [X] CC18
+	- Done in Iteration 1
 - [ ] CC19
 - [ ] CC20
 - [ ] CC21
@@ -27,6 +38,8 @@ A pretty basic WPF project for my school
 - [ ] CC23
 - [ ] CC24
 - [ ] CC25
+ 
+### Iteration 3
 - [ ] CC26
 - [ ] CC27
 - [ ] CC28
