@@ -13,8 +13,10 @@ namespace CookieClicker
     /// </summary>
     internal static class GameCore
     {
-        public static int Cookies;
+        public static double Cookies;
         public static double CPS;
+
+        private static double previousCookies = 0;
 
         /// <summary>
         /// The main game loop timer.
@@ -74,7 +76,14 @@ namespace CookieClicker
             //1 tick = 10ms
 
             //Update all components, we only do this every second to save performance
-            if (ticks % 100 == 0) UpdateComponents();
+            if (ticks % 100 == 0)
+            {
+                //Calculate CPS
+                CPS = Cookies - previousCookies;
+                previousCookies = Cookies;
+
+                UpdateComponents();
+            }
 
             //Increment the tick counter, reset it if it's too high
             if (++ticks >= 100_000) ticks = 0;
