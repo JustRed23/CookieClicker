@@ -1,6 +1,8 @@
-﻿using CookieClicker.investment.items;
+﻿using CookieClicker.assets;
+using CookieClicker.investment.items;
 using System;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media;
 
 namespace CookieClicker
@@ -23,7 +25,14 @@ namespace CookieClicker
         public MainWindow()
         {
             Instance = this;
+            Assets.Load();
             InitializeComponent();
+        }
+
+        public void ShowWindow(Grid window)
+        {
+            References.ALL_GRIDS.ForEach(g => g.Visibility = Visibility.Hidden);
+            window.Visibility = Visibility.Visible;
         }
 
         /// <summary>
@@ -31,6 +40,9 @@ namespace CookieClicker
         /// </summary>
         private void Setup(object sender, RoutedEventArgs e)
         {
+            //Set up the cookie image
+            References.COOKIE_IMAGE.Source = Assets.COOKIE;
+
             //When changing the image width, make it scale in the center
             References.COOKIE_IMAGE.RenderTransformOrigin = new Point(0.5, 0.5);
 
@@ -40,6 +52,10 @@ namespace CookieClicker
             References.COOKIE_IMAGE.MouseDown += (s, ev) => Cookie_Pressed();
             References.COOKIE_IMAGE.MouseUp += (s, ev) => Cookie_Released();
             References.COOKIE_IMAGE.MouseLeave += (s, ev) => Cookie_Released();
+
+            //Set up shop buttons
+            References.SHOP_BUTTON.Click += (s, ev) => ShowWindow(References.SHOP);
+            References.CLOSE_BUTTON.Click += (s, ev) => ShowWindow(References.MAINWINDOW);
 
             //Add all investments
             GameCore.AddInvestment(new Cursor());

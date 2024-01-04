@@ -55,9 +55,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="assets\Assets.cs" />
     <Compile Include="Formatter.cs" />
     <Compile Include="GameCore.cs" />
     <Compile Include="investment\Investment.cs" />
+    <Compile Include="investment\InvestmentButton.cs" />
+    <Compile Include="investment\InvestmentCategory.cs" />
     <Compile Include="investment\items\Cursor.cs" />
     <Compile Include="investment\items\Factory.cs" />
     <Compile Include="investment\items\Farm.cs" />
@@ -104,7 +107,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="assets\cookie.png" />
+    <Resource Include="assets\default\cookie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="assets\default\investment\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

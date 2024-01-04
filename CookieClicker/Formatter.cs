@@ -14,15 +14,13 @@ namespace CookieClicker
         public static string FormatCookies(double cookies, string append)
         {
             if (append == null)
-                append = cookies == 1 ? "cookie" : "cookies";
+                append = cookies <= 1 && cookies != 0 ? "cookie" : "cookies";
             append = " " + append;
-
-            cookies = Math.Floor(cookies);
 
             if (cookies < 1_000_000)
             {
                 //make cookies over 1000 have a space between every 3 digits
-                return cookies.ToString(cookies >= 1000 ? "0 000" : "") + append;
+                return cookies.ToString(cookies >= 1000 ? "0 000" : "", CultureInfo.InvariantCulture) + append;
             }
             else
             {
