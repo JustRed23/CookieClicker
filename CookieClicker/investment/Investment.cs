@@ -1,18 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
-using System.Windows.Media;
-using System.Windows;
 
 namespace CookieClicker.investment
 {
     internal abstract class Investment
     {
-        private InvestmentButton button;
-        private InvestmentCategory category;
+        private readonly InvestmentButton button;
+        private readonly InvestmentCategory category;
 
         public string name;
         public int amount = 0;

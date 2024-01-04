@@ -1,11 +1,7 @@
 ﻿using CookieClicker.investment;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
 using System.Timers;
-using System.Windows.Threading;
 
 namespace CookieClicker
 {
@@ -22,7 +18,7 @@ namespace CookieClicker
         /// <summary>
         /// The list of all investments.
         /// </summary>
-        private static List<Investment> investments = new List<Investment>();
+        private static readonly List<Investment> investments = new List<Investment>();
 
         /// <summary>
         /// The main game loop timer.

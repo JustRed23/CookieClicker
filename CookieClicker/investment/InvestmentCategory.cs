@@ -4,7 +4,7 @@ namespace CookieClicker.investment
 {
     internal class InvestmentCategory
     {
-        private Investment investment;
+        private readonly Investment investment;
 
         public InvestmentCategory(Investment investment)
         {

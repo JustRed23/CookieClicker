@@ -20,7 +20,7 @@ namespace CookieClicker
         /// <summary>
         /// The scale transform used for the cookie image.
         /// </summary>
-        private ScaleTransform scale = new ScaleTransform();
+        private readonly ScaleTransform scale = new ScaleTransform();
 
         public MainWindow()
         {
