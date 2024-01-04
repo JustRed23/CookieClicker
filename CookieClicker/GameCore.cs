@@ -121,8 +121,8 @@ namespace CookieClicker
         {
             MainWindow.Instance.Dispatcher.Invoke(() =>
             {
-                References.COOKIES.Text = Cookies.ToString();
-                References.CPS.Text = CPS.ToString();
+                References.COOKIES.Text = Formatter.FormatCookies(Cookies, null);
+                References.CPS.Text = Formatter.FormatCookies(CPS, "CPS");
             });
         }
     }

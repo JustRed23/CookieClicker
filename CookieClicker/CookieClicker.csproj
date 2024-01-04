@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Formatter.cs" />
     <Compile Include="GameCore.cs" />
     <Compile Include="investment\Investment.cs" />
     <Compile Include="investment\items\Cursor.cs" />
