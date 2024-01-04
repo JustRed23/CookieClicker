@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using CookieClicker.assets;
+using System.Diagnostics;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
@@ -36,7 +38,7 @@ namespace CookieClicker.investment
             panel.IsEnabled = false;
 
             Image image = new Image();
-            image.Source = new System.Windows.Media.Imaging.BitmapImage(new System.Uri("pack://application:,,,/assets/cookie.png"));
+            image.Source = Assets.GetImage("investments/" + investment.name + ".png");
             image.Width = 50;
             image.Height = 50;
             image.Margin = new Thickness(2);

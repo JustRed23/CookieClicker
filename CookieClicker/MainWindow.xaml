@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CookieClicker"
         mc:Ignorable="d"
-        Title="Cookie Clicker" Width="360" Height="640" MinWidth="360" MinHeight="640" Loaded="Setup" Closing="Shutdown">
+        Title="Cookie Clicker" Width="360" Height="640" MinWidth="360" MinHeight="640" Icon="/assets/default/cookie.png"  Loaded="Setup" Closing="Shutdown">
     <Grid>
         <Grid Name="MainGrid">
             <Grid.RowDefinitions>
@@ -21,7 +21,7 @@
             </StackPanel>
 
             <!-- Cookie Image -->
-            <Image Grid.Row="1" Name="ImgCookie" Source="assets/cookie.png" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image Grid.Row="1" Name="ImgCookie" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
             <!-- Shop Button -->
             <Button Grid.Row="2" Name="BtnShop" Content="Shop" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="60" Height="60" Margin="0,0,10,10" />

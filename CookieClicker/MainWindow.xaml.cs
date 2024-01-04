@@ -1,4 +1,5 @@
-﻿using CookieClicker.investment.items;
+﻿using CookieClicker.assets;
+using CookieClicker.investment.items;
 using System;
 using System.Windows;
 using System.Windows.Controls;
@@ -24,6 +25,7 @@ namespace CookieClicker
         public MainWindow()
         {
             Instance = this;
+            Assets.Load();
             InitializeComponent();
         }
 
@@ -38,6 +40,9 @@ namespace CookieClicker
         /// </summary>
         private void Setup(object sender, RoutedEventArgs e)
         {
+            //Set up the cookie image
+            References.COOKIE_IMAGE.Source = Assets.COOKIE;
+
             //When changing the image width, make it scale in the center
             References.COOKIE_IMAGE.RenderTransformOrigin = new Point(0.5, 0.5);
 
