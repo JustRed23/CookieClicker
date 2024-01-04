@@ -8,6 +8,9 @@ using System.Windows.Threading;
 
 namespace CookieClicker
 {
+    /// <summary>
+    /// The main game logic class.
+    /// </summary>
     internal static class GameCore
     {
         public static int Cookies;
@@ -23,6 +26,10 @@ namespace CookieClicker
         /// </summary>
         private static int ticks = 0;
 
+        /// <summary>
+        /// Initializes the game.
+        /// </summary>
+        /// <exception cref="InvalidOperationException">Thrown if the game has already been initialized.</exception>
         public static void Init()
         {
             if (timer != null) throw new InvalidOperationException("Game has already been initialized.");
@@ -39,13 +46,21 @@ namespace CookieClicker
             timer.Start();
         }
 
+        /// <summary>
+        /// Shuts down the game.
+        /// </summary>
         public static void Shutdown()
         {
+            if (timer == null) return;
+
             timer.Stop();
             timer.Dispose();
             timer = null;
         }
 
+        /// <summary>
+        /// Called when the cookie image is clicked.
+        /// </summary>
         public static void CookieClicked()
         {
             if (timer == null) return;
