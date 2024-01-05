@@ -56,7 +56,6 @@ namespace CookieClicker.investment
             panel = new StackPanel();
             panel.Orientation = Orientation.Horizontal;
             panel.Height = 75;
-            panel.Margin = new Thickness(0, 0, 0, 10);
 
             //set the panel background to a repeating image
             ImageBrush brush = new ImageBrush();
@@ -76,6 +75,7 @@ namespace CookieClicker.investment
             border.BorderThickness = new Thickness(3);
             border.Child = scrollViewer;
             border.Visibility = Visibility.Hidden;
+            border.Margin = new Thickness(0, 0, 0, 10);
 
             parent.Children.Add(border);
         }
