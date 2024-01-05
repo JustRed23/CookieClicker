@@ -39,9 +39,9 @@ A pretty basic WPF project for my school
 - [ ] CC23
 - [ ] CC24
 - [ ] CC25
+- [X] CC26
  
 ### Iteration 3
-- [ ] CC26
 - [ ] CC27
 - [ ] CC28
 - [ ] CC29
