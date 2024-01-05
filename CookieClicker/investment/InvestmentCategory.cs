@@ -32,7 +32,7 @@ namespace CookieClicker.investment
             {
                 //create a reference so we don't have to load the image every time
                 iconReference = new Image();
-                iconReference.Source = Assets.GetImage("investments/" + investment.name.ToLower() + ".png");
+                iconReference.Source = Assets.GetImage("investments/" + investment.Name.ToLower() + ".png");
                 iconReference.Width = panel.Height - 10;
                 iconReference.Height = iconReference.Width;
                 iconReference.Margin = new System.Windows.Thickness(2);
@@ -59,7 +59,7 @@ namespace CookieClicker.investment
 
             //set the panel background to a repeating image
             ImageBrush brush = new ImageBrush();
-            brush.ImageSource = Assets.GetImage("investments/" + investment.name.ToLower() + "-bg.png");
+            brush.ImageSource = Assets.GetImage("investments/" + investment.Name.ToLower() + "-bg.png");
             brush.TileMode = TileMode.Tile;
             brush.Viewport = new Rect(0, 0, panel.Height, panel.Height);
             brush.ViewportUnits = BrushMappingMode.Absolute;

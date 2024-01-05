@@ -22,10 +22,10 @@ namespace CookieClicker.investment
         {
             if (!IsCreated()) return;
 
-            count.Text = investment.amount.ToString();
-            price.Text = Formatter.FormatCookies(investment.price, null);
+            count.Text = investment.Amount.ToString();
+            price.Text = Formatter.FormatCookies(investment.Price, null);
 
-            bool hasEnough = investment.price <= GameCore.Cookies;
+            bool hasEnough = investment.Price <= GameCore.Cookies;
             price.Foreground = hasEnough ? count.Foreground : Brushes.Red;
         }
 
@@ -38,15 +38,15 @@ namespace CookieClicker.investment
             panel.Background = new SolidColorBrush(Color.FromRgb(101, 67, 33));
             panel.MouseLeftButtonDown += (s, e) =>
             {
-                if (investment.price <= GameCore.Cookies) investment.Buy();
+                if (investment.Price <= GameCore.Cookies) investment.Buy();
             };
 
             ToolTip toolTip = new ToolTip();
-            toolTip.Content = $"Each {investment.name} produces {Formatter.FormatCookies(investment.cookiesPerSecond, null)} per second";
+            toolTip.Content = $"Each {investment.Name} produces {Formatter.FormatCookies(investment.CookiesPerSecond, null)} per second";
             panel.ToolTip = toolTip;
 
             Image image = new Image();
-            image.Source = Assets.GetImage("investments/" + investment.name.ToLower() + ".png");
+            image.Source = Assets.GetImage("investments/" + investment.Name.ToLower() + ".png");
             image.Width = 50;
             image.Height = 50;
             image.Margin = new Thickness(2);
@@ -59,12 +59,12 @@ namespace CookieClicker.investment
             info.Margin = new Thickness(5);
 
             TextBlock name = new TextBlock();
-            name.Text = investment.name;
+            name.Text = investment.Name;
             name.FontSize = 20;
             info.Children.Add(name);
 
             price = new TextBlock();
-            price.Text = Formatter.FormatCookies(investment.price, null);
+            price.Text = Formatter.FormatCookies(investment.Price, null);
             price.FontSize = 15;
             info.Children.Add(price);
 
