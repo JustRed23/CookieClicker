@@ -35,6 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -113,12 +114,12 @@
     <Resource Include="assets\default\cookie.png" />
   </ItemGroup>
   <ItemGroup>
-	<Resource Include="assets\default\investments\bank.png" />
+    <Resource Include="assets\default\investments\bank.png" />
     <Resource Include="assets\default\investments\cursor.png" />
     <Resource Include="assets\default\investments\factory.png" />
     <Resource Include="assets\default\investments\farm.png" />
     <Resource Include="assets\default\investments\grandma.png" />
-	<Resource Include="assets\default\investments\mine.png" />
+    <Resource Include="assets\default\investments\mine.png" />
     <Resource Include="assets\default\investments\temple.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

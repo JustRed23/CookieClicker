@@ -1,5 +1,6 @@
 ﻿using CookieClicker.assets;
 using CookieClicker.investment.items;
+using Microsoft.VisualBasic;
 using System;
 using System.Windows;
 using System.Windows.Controls;
@@ -42,6 +43,23 @@ namespace CookieClicker
         {
             //Set the background
             this.Background = new ImageBrush(Assets.BACKGROUND);
+
+            //Set the bakery name and it's name changing event
+            References.BAKERYNAME.Text = "PXL-Bakery";
+            References.BAKERYNAME.MouseLeftButtonDown += (s, ev) =>
+            {
+                string input = Interaction.InputBox("Enter a new name for your bakery", "Change bakery name", References.BAKERYNAME.Text);
+                input = input.Trim();
+
+                if (input.Length > 0)
+                {
+                    References.BAKERYNAME.Text = input;
+                }
+                else
+                {
+                    MessageBox.Show("The bakery name cannot be empty!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            };
 
             //Set up the cookie image
             References.COOKIE_IMAGE.Source = Assets.COOKIE;

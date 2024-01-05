@@ -33,8 +33,8 @@ A pretty basic WPF project for my school
 - [X] [CC18](https://github.com/JustRed23/CookieClicker/commit/f5166b1557660820ef151178a173c3e263c3d26b)
 	- Done in Iteration 1
 - [X] CC19
-- [ ] CC20
-- [ ] CC21
+- [X] CC20
+- [X] CC21
 - [ ] CC22
 - [ ] CC23
 - [ ] CC24
