@@ -16,6 +16,8 @@ namespace CookieClicker.investment
         protected double initialPrice = 0;
         protected double output = 1;
 
+        private long multiplierPriceMultiplier = 100;
+
         public double CookiesPerSecond = 0;
 
         public Investment(string name, double initialPrice, double output)
@@ -48,13 +50,29 @@ namespace CookieClicker.investment
             button.Update();
         }
 
-        //TODO
         public void Buy()
         {
             GameCore.RemoveCookies(Price);
             Amount++;
             Price = Math.Round(initialPrice * Math.Pow(1.15, Amount));
             category.OnBuy();
+        }
+
+        public void BuyMultiplier()
+        {
+            GameCore.RemoveCookies(GetMultiplierPrice());
+            Multiplier *= 2;
+
+            if (multiplierPriceMultiplier == 100)
+                multiplierPriceMultiplier = 500;
+            else multiplierPriceMultiplier *= 10;
+
+            GameCore.UpdateComponents();
+        }
+
+        public double GetMultiplierPrice()
+        {
+            return initialPrice * multiplierPriceMultiplier;
         }
     }
 }

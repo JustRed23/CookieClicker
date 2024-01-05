@@ -116,7 +116,7 @@ namespace CookieClicker
             if (++ticks >= 100_000) ticks = 0;
         }
 
-        private static void UpdateComponents()
+        public static void UpdateComponents()
         {
             MainWindow.Instance.Dispatcher.Invoke(() =>
             {

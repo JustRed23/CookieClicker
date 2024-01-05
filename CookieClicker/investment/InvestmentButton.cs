@@ -13,6 +13,9 @@ namespace CookieClicker.investment
         private TextBlock count;
         private TextBlock price;
 
+        private TextBlock multiplierText;
+        private TextBlock multiplierPrice;
+
         public InvestmentButton(Investment investment)
         {
             this.investment = investment;
@@ -27,6 +30,12 @@ namespace CookieClicker.investment
 
             bool hasEnough = investment.Price <= GameCore.Cookies;
             price.Foreground = hasEnough ? count.Foreground : Brushes.Red;
+
+            multiplierText.Text = "x" + investment.Multiplier;
+            multiplierPrice.Text = Formatter.FormatCookies(investment.GetMultiplierPrice(), "");
+
+            bool hasEnoughMultiplier = investment.GetMultiplierPrice() <= GameCore.Cookies;
+            multiplierPrice.Foreground = hasEnoughMultiplier ? multiplierText.Foreground : Brushes.Red;
         }
 
         public void Create(Panel parent)
@@ -34,8 +43,8 @@ namespace CookieClicker.investment
             if (IsCreated()) return;
 
             panel = new DockPanel();
-            panel.Margin = new Thickness(0, 0, 0, 5);
             panel.Background = new SolidColorBrush(Color.FromRgb(101, 67, 33));
+            panel.Height = 60;
             panel.MouseLeftButtonDown += (s, e) =>
             {
                 if (investment.Price <= GameCore.Cookies) investment.Buy();
@@ -47,8 +56,8 @@ namespace CookieClicker.investment
 
             Image image = new Image();
             image.Source = Assets.GetImage("investments/" + investment.Name.ToLower() + ".png");
-            image.Width = 50;
-            image.Height = 50;
+            image.Width = panel.Height - 5;
+            image.Height = panel.Height - 5;
             image.Margin = new Thickness(2);
             DockPanel.SetDock(image, Dock.Left);
             panel.Children.Add(image);
@@ -80,7 +89,40 @@ namespace CookieClicker.investment
             DockPanel.SetDock(count, Dock.Right);
             panel.Children.Add(count);
 
-            parent.Children.Add(panel);
+            //multiplier start
+            StackPanel multiplier = new StackPanel();
+            multiplier.Orientation = Orientation.Vertical;
+            multiplier.Margin = new Thickness(5, 0, 0, 0);
+            multiplier.MinWidth = panel.Height;
+            multiplier.Background = panel.Background;
+
+            multiplier.MouseLeftButtonDown += (s, e) =>
+            {
+                if (investment.GetMultiplierPrice() <= GameCore.Cookies) investment.BuyMultiplier();
+            };
+
+            multiplierText = new TextBlock();
+            multiplierText.Text = "x" + investment.Multiplier;
+            multiplierText.FontSize = 22;
+            multiplierText.HorizontalAlignment = HorizontalAlignment.Center;
+            multiplierText.VerticalAlignment = VerticalAlignment.Center;
+            multiplier.Children.Add(multiplierText);
+
+            multiplierPrice = new TextBlock();
+            multiplierPrice.Text = Formatter.FormatCookies(investment.GetMultiplierPrice(), "");
+            multiplierPrice.FontSize = 12;
+            multiplierPrice.HorizontalAlignment = HorizontalAlignment.Center;
+            multiplierPrice.VerticalAlignment = VerticalAlignment.Center;
+            multiplier.Children.Add(multiplierPrice);
+            //multiplier end
+
+            DockPanel combined = new DockPanel();
+            combined.Margin = new Thickness(0, 0, 0, 5);
+            DockPanel.SetDock(multiplier, Dock.Right);
+            combined.Children.Add(multiplier);
+            combined.Children.Add(panel);
+
+            parent.Children.Add(combined);
         }
 
         public bool IsCreated()
