@@ -11,6 +11,8 @@ namespace CookieClicker.investment
         public int amount = 0;
         public double price = 0;
 
+        public int Multiplier = 1;
+
         protected double initialPrice = 0;
         protected double output = 1;
 
@@ -31,7 +33,7 @@ namespace CookieClicker.investment
 
         public void Generate()
         {
-            if (amount > 0) GameCore.AddCookies(amount * output);
+            if (amount > 0) GameCore.AddCookies((amount * output) * Multiplier);
         }
 
         public void Update()
