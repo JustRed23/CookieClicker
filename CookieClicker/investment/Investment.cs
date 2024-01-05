@@ -12,11 +12,11 @@ namespace CookieClicker.investment
         public double price = 0;
 
         protected double initialPrice = 0;
-        protected double multiplier = 1;
+        protected double output = 1;
 
         public double cookiesPerSecond = 0;
 
-        public Investment(string name, double initialPrice, double multiplier)
+        public Investment(string name, double initialPrice, double output)
         {
             this.name = name;
             this.button = new InvestmentButton(this);
@@ -24,14 +24,14 @@ namespace CookieClicker.investment
 
             this.initialPrice = initialPrice;
             this.price = initialPrice;
-            this.multiplier = multiplier;
+            this.output = output;
 
-            this.cookiesPerSecond = 100 * multiplier;
+            this.cookiesPerSecond = 100 * output;
         }
 
         public void Generate()
         {
-            if (amount > 0) GameCore.AddCookies(amount * multiplier);
+            if (amount > 0) GameCore.AddCookies(amount * output);
         }
 
         public void Update()
