@@ -39,7 +39,7 @@ A pretty basic WPF project for my school
 - [ ] CC23
 - [ ] CC24
 - [ ] CC25
-- [X] CC26
+- [X] [CC26](https://github.com/JustRed23/CookieClicker/commit/04e1e07a2ff6e5409907a394618c376ae46ccedc)
  
 ### Iteration 3
 - [ ] CC27
