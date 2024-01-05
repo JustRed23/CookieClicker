@@ -10,6 +10,7 @@ namespace CookieClicker
     /// </summary>
     internal static class GameCore
     {
+        public static double TotalCookies;
         public static double Cookies;
         public static double CPS;
 
@@ -38,13 +39,12 @@ namespace CookieClicker
         {
             if (timer != null) throw new InvalidOperationException("Game has already been initialized.");
 
+            TotalCookies = 0;
             Cookies = 0;
             CPS = 0;
 
             References.COOKIES.Text = Cookies.ToString();
             References.CPS.Text = CPS.ToString();
-
-            investments.ForEach(i => i.Create());
 
             ticks = 0;
             timer = new Timer(10);
@@ -79,6 +79,7 @@ namespace CookieClicker
             if (amount < 0) throw new ArgumentOutOfRangeException(nameof(amount), "Amount must be positive.");
 
             Cookies += amount;
+            TotalCookies += amount;
             UpdateComponents();
         }
 

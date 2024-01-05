@@ -20,6 +20,8 @@ namespace CookieClicker.investment
 
         public void Update()
         {
+            if (!IsCreated()) return;
+
             count.Text = investment.amount.ToString();
             price.Text = Formatter.FormatCookies(investment.price, null);
 
@@ -29,6 +31,8 @@ namespace CookieClicker.investment
 
         public void Create(Panel parent)
         {
+            if (IsCreated()) return;
+
             panel = new DockPanel();
             panel.Margin = new Thickness(0, 0, 0, 5);
             panel.Background = new SolidColorBrush(Color.FromRgb(101, 67, 33));
@@ -77,6 +81,11 @@ namespace CookieClicker.investment
             panel.Children.Add(count);
 
             parent.Children.Add(panel);
+        }
+
+        public bool IsCreated()
+        {
+            return panel != null;
         }
     }
 }
