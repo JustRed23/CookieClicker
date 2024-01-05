@@ -35,10 +35,10 @@ A pretty basic WPF project for my school
 - [X] [CC19](https://github.com/JustRed23/CookieClicker/commit/8e267076d060eb95c72a46156edc6db3f596714a)
 - [X] [CC20](https://github.com/JustRed23/CookieClicker/commit/6dd4b5462bcaa549141f35c4139f492c929af1a9)
 - [X] [CC21](https://github.com/JustRed23/CookieClicker/commit/6dd4b5462bcaa549141f35c4139f492c929af1a9)
-- [ ] CC22
-- [ ] CC23
-- [ ] CC24
-- [ ] CC25
+- [X] [CC22](https://github.com/JustRed23/CookieClicker/commit/ac0537aa6a25c7e785b7e91c1b0fa4c976845d29)
+- [X] [CC23](https://github.com/JustRed23/CookieClicker/commit/ac0537aa6a25c7e785b7e91c1b0fa4c976845d29)
+- [X] [CC24](https://github.com/JustRed23/CookieClicker/commit/ac0537aa6a25c7e785b7e91c1b0fa4c976845d29)
+- [X] [CC25](https://github.com/JustRed23/CookieClicker/commit/73f9f8bbacee864ee246f0616a1292404631d059)
 - [X] [CC26](https://github.com/JustRed23/CookieClicker/commit/04e1e07a2ff6e5409907a394618c376ae46ccedc)
  
 ### Iteration 3
