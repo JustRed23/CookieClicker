@@ -32,9 +32,9 @@ A pretty basic WPF project for my school
 	- Done in Iteration 1
 - [X] [CC18](https://github.com/JustRed23/CookieClicker/commit/f5166b1557660820ef151178a173c3e263c3d26b)
 	- Done in Iteration 1
-- [X] CC19
-- [X] CC20
-- [X] CC21
+- [X] [CC19](https://github.com/JustRed23/CookieClicker/commit/8e267076d060eb95c72a46156edc6db3f596714a)
+- [X] [CC20](https://github.com/JustRed23/CookieClicker/commit/6dd4b5462bcaa549141f35c4139f492c929af1a9)
+- [X] [CC21](https://github.com/JustRed23/CookieClicker/commit/6dd4b5462bcaa549141f35c4139f492c929af1a9)
 - [ ] CC22
 - [ ] CC23
 - [ ] CC24
