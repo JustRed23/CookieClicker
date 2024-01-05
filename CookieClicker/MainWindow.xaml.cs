@@ -66,6 +66,8 @@ namespace CookieClicker
             GameCore.AddInvestment(new Farm());
             GameCore.AddInvestment(new Mine());
             GameCore.AddInvestment(new Factory());
+            GameCore.AddInvestment(new Bank());
+            GameCore.AddInvestment(new Temple());
 
             //Set up the game
             GameCore.Init();

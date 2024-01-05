@@ -61,11 +61,13 @@
     <Compile Include="investment\Investment.cs" />
     <Compile Include="investment\InvestmentButton.cs" />
     <Compile Include="investment\InvestmentCategory.cs" />
+    <Compile Include="investment\items\Bank.cs" />
     <Compile Include="investment\items\Cursor.cs" />
     <Compile Include="investment\items\Factory.cs" />
     <Compile Include="investment\items\Farm.cs" />
     <Compile Include="investment\items\Grandma.cs" />
     <Compile Include="investment\items\Mine.cs" />
+    <Compile Include="investment\items\Temple.cs" />
     <Compile Include="References.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
