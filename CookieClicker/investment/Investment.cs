@@ -37,20 +37,22 @@ namespace CookieClicker.investment
         public void Update()
         {
             //Check if the button should be created
-            if (!button.IsCreated() && initialPrice <= GameCore.TotalCookies) button.Create(References.INVESTMENTS);
+            if (!button.IsCreated() && initialPrice <= GameCore.TotalCookies)
+            {
+                button.Create(References.INVESTMENTS);
+                category.Create(References.CATEGORIES);
+            }
 
             button.Update();
-            category.Update();
         }
 
         //TODO
         public void Buy()
         {
-            if (amount == 0) category.Create(References.CATEGORIES);
-
             GameCore.RemoveCookies(price);
             amount++;
             price = Math.Round(initialPrice * Math.Pow(1.15, amount));
+            category.OnBuy();
         }
     }
 }

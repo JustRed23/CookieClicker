@@ -45,7 +45,9 @@
             </ScrollViewer>
 
             <!-- Categories -->
-            <StackPanel Grid.Row="2" Name="Categories" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto">
+                <StackPanel Name="Categories" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            </ScrollViewer>
         </Grid>
     </Grid>
 </Window>
