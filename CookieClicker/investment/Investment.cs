@@ -2,6 +2,9 @@
 
 namespace CookieClicker.investment
 {
+    /// <summary>
+    /// Represents an investment that can be bought
+    /// </summary>
     internal abstract class Investment
     {
         private readonly InvestmentButton button;
@@ -16,6 +19,9 @@ namespace CookieClicker.investment
         protected double initialPrice = 0;
         protected double output = 1;
 
+        /// <summary>
+        /// The amount of which the multiplier price increases, starts at 100, then 500, then increases by a factor of 10
+        /// </summary>
         private long multiplierPriceMultiplier = 100;
 
         public double CookiesPerSecond = 0;
@@ -33,11 +39,17 @@ namespace CookieClicker.investment
             this.CookiesPerSecond = 100 * output;
         }
 
+        /// <summary>
+        /// Generates 10ms worth of cookies
+        /// </summary>
         public void Generate()
         {
             if (Amount > 0) GameCore.AddCookies((Amount * output) * Multiplier, Name);
         }
 
+        /// <summary>
+        /// Updates UI elements
+        /// </summary>
         public void Update()
         {
             //Check if the button should be created

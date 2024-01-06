@@ -14,10 +14,22 @@ namespace CookieClicker
     /// </summary>
     internal static class GameCore
     {
+        /// <summary>
+        /// The total amount of cookies that have been generated.
+        /// </summary>
         public static double TotalCookies;
+        /// <summary>
+        /// The current amount of cookies.
+        /// </summary>
         public static double Cookies;
+        /// <summary>
+        /// The current amount of cookies per second.
+        /// </summary>
         public static double CPS;
 
+        /// <summary>
+        /// The amount of cookies that were generated in the previous tick. Used to calculate CPS.
+        /// </summary>
         private static double previousCookies = 0;
 
         /// <summary>
@@ -68,6 +80,10 @@ namespace CookieClicker
             timer = null;
         }
 
+        /// <summary>
+        /// Adds an investment to the list of investments.
+        /// </summary>
+        /// <param name="investment">The investment you want to add</param>
         public static void AddInvestment(Investment investment)
         {
             investments.Add(investment);
@@ -103,6 +119,9 @@ namespace CookieClicker
             UpdateComponents();
         }
 
+        /// <summary>
+        /// The main game loop.
+        /// </summary>
         private static void Update()
         {
             //1 tick = 10ms
@@ -165,6 +184,9 @@ namespace CookieClicker
             if (++ticks >= 100_000) ticks = 0;
         }
 
+        /// <summary>
+        /// Updates the UI components. Runs on the UI thread.
+        /// </summary>
         public static void UpdateComponents()
         {
             MainWindow.Instance.Dispatcher.Invoke(() =>

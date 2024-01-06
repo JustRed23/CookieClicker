@@ -3,9 +3,9 @@ A pretty basic WPF project for my school
 
 ## TODO
 - [X] Add a `README.md` file
-- [ ] Add textures
+- [X] Add textures
 - [X] Texturepack system
-- [ ] Add more documentation
+- [X] Add more documentation
 
 ## Tasks
 Every task is a commit, so you can see the progress of the project by clicking on the task.

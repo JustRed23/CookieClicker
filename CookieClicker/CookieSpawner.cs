@@ -7,6 +7,9 @@ using System.Windows.Media;
 
 namespace CookieClicker
 {
+    /// <summary>
+    /// Particle system that spawns cookies at random locations on the screen
+    /// </summary>
     internal static class CookieSpawner
     {
 
@@ -15,14 +18,18 @@ namespace CookieClicker
         private static readonly List<Cookie> pendingAdd = new List<Cookie>();
         private static readonly List<Cookie> pendingRemoval = new List<Cookie>();
 
-        private static bool stopping = false;
-
+        /// <summary>
+        /// Adds a cookie to the list of cookies to spawn
+        /// </summary>
         public static void Spawn()
         {
             if (cookies.Count >= Cookie.MAX_ON_SCREEN) return;
             pendingAdd.Add(new Cookie());
         }
 
+        /// <summary>
+        /// Ticks the particle system, spawning cookies and removing them when they exceed their lifetime
+        /// </summary>
         public static void Tick()
         {
             if (pendingAdd.Count > 0)
@@ -40,19 +47,20 @@ namespace CookieClicker
             pendingRemoval.Clear();
         }
 
-        public static void Stop()
-        {
-            stopping = true;
-        }
-
         internal static void Remove(Cookie cookie)
         {
             pendingRemoval.Add(cookie);
         }
     }
 
+    /// <summary>
+    /// A cookie that is spawned by the particle system
+    /// </summary>
     internal class Cookie
     {
+        /// <summary>
+        /// The maximum amount of cookies that can be on screen at once
+        /// </summary>
         public static readonly int MAX_ON_SCREEN = 50;
         private readonly int LIFETIME = 200;
 
@@ -65,7 +73,7 @@ namespace CookieClicker
 
         private Image image;
 
-        public Cookie()
+        internal Cookie()
         {
             MainWindow.Instance.Dispatcher.Invoke(() =>
             {
@@ -86,7 +94,7 @@ namespace CookieClicker
             });
         }
 
-        public void Tick()
+        internal void Tick()
         {
             if (ticks++ >= LIFETIME)
             {

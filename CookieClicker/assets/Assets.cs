@@ -5,6 +5,9 @@ using System.Windows.Media.Imaging;
 
 namespace CookieClicker.assets
 {
+    /// <summary>
+    /// A basic texture pack system, loads textures from the assets folder in their respective texture pack folder
+    /// </summary>
     internal static class Assets
     {
         private static readonly string PACK_URL = "pack://application:,,,";
@@ -16,11 +19,18 @@ namespace CookieClicker.assets
 
         public static BitmapImage CLOSE_ICON;
 
+        /// <summary>
+        /// Loads the default texture pack
+        /// </summary>
         public static void Load()
         {
             Load(currentTexturePack);
         }
 
+        /// <summary>
+        /// Loads a texture pack
+        /// </summary>
+        /// <param name="texturePack">The name of the texture pack, THIS SHOULD BE THE SAME AS THE FOLDER NAME UNDER THE ASSETS DIRECTORY!</param>
         public static void Load(string texturePack)
         {
             currentTexturePack = texturePack;
@@ -32,6 +42,11 @@ namespace CookieClicker.assets
             CLOSE_ICON = LoadImageOrDefault("close.png");
         }
 
+        /// <summary>
+        /// Gets an image from the current texture pack
+        /// </summary>
+        /// <param name="image">The full image name including it's extension</param>
+        /// <returns>The image if found, or null if not</returns>
         public static BitmapImage GetImage(string image)
         {
             return LoadImageOrNull(image);

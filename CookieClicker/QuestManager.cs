@@ -9,11 +9,17 @@ using System.Windows.Media;
 
 namespace CookieClicker
 {
+    /// <summary>
+    /// Handles everything related to quests.
+    /// </summary>
     internal static class QuestManager
     {
         private static readonly List<Quest> quests = new List<Quest>();
         private static int completeCount = 0;
 
+        /// <summary>
+        /// Loads the quests from the embedded quests.json file.
+        /// </summary>
         public static void Load()
         {
             quests.Clear();
@@ -35,6 +41,12 @@ namespace CookieClicker
             Debug.WriteLine($"Loaded {quests.Count} quests.");
         }
 
+        /// <summary>
+        /// Checks if the given action has completed any quests.
+        /// </summary>
+        /// <param name="type">The action type</param>
+        /// <param name="sender">(Optional) the sender, this would represent the investment on the Buy/Generate action</param>
+        /// <param name="count">(Optional) the current amount of the investment</param>
         public static void CheckProgress(ActionType type, string sender = null, int count = -1)
         {
             if (sender != null) sender = sender.ToLower();
@@ -120,6 +132,9 @@ namespace CookieClicker
         }
     }
 
+    /// <summary>
+    /// The type of action that was performed.
+    /// </summary>
     internal enum ActionType
     {
         Buy,
@@ -127,6 +142,9 @@ namespace CookieClicker
         Generate
     }
 
+    /// <summary>
+    /// Represents a quest.
+    /// </summary>
     internal class Quest
     {
         public string Name { get; }

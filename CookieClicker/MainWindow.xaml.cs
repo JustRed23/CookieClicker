@@ -31,6 +31,10 @@ namespace CookieClicker
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Shows the given window and hides all other windows.
+        /// </summary>
+        /// <param name="window">The window you want to show</param>
         public void ShowWindow(Grid window)
         {
             References.ALL_GRIDS.ForEach(g => g.Visibility = Visibility.Hidden);
@@ -98,6 +102,10 @@ namespace CookieClicker
             GameCore.Init();
         }
 
+        /// <summary>
+        /// Sets the given button's content to the close image and removes the background and border.
+        /// </summary>
+        /// <param name="button">The button you want to modify</param>
         private void SetIcon(Button button)
         {
             button.Content = new Image() { Source = Assets.CLOSE_ICON };
@@ -114,6 +122,9 @@ namespace CookieClicker
             GameCore.Shutdown();
         }
 
+        /// <summary>
+        /// Called when the cookie is pressed. Spawns a cookie particle, scales the cookie image, and adds 1 to the cookie count.
+        /// </summary>
         private void Cookie_Pressed()
         {
             scale.ScaleX = 0.8;
@@ -124,6 +135,9 @@ namespace CookieClicker
             GameCore.AddCookies(1, "cookies");
         }
 
+        /// <summary>
+        /// Called when the cookie is released. Resets the cookie image scale.
+        /// </summary>
         private void Cookie_Released()
         {
             scale.ScaleX = 1;
