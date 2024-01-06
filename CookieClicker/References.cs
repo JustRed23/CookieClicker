@@ -12,6 +12,7 @@ namespace CookieClicker
         //Main window
         public static Grid       MAINWINDOW    = MainWindow.Instance.MainGrid;
         public static Canvas     GOLDENCOOKIE  = MainWindow.Instance.GoldenCookieSpawner;
+        public static Canvas     PARTICLES     = MainWindow.Instance.CookieParticles;
         public static TextBlock  BAKERYNAME    = MainWindow.Instance.TxtBakery;
         public static TextBlock  COOKIES       = MainWindow.Instance.TxtCookies;
         public static TextBlock  CPS           = MainWindow.Instance.TxtCPS;

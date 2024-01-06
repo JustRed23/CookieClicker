@@ -16,7 +16,10 @@
 
             <!-- Golden Cookies -->
             <Canvas Name="GoldenCookieSpawner" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Panel.ZIndex="999"/>
-
+            
+            <!-- Cookie Particles -->
+            <Canvas Name="CookieParticles" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            
             <!-- Header -->
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                 <TextBlock Name="TxtBakery" FontSize="36" FontWeight="ExtraBold" MinWidth="360" HorizontalAlignment="Center" TextAlignment="Center"/>

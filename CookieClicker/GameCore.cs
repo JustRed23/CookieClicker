@@ -144,6 +144,9 @@ namespace CookieClicker
                 }
             }
 
+            //Tick particles
+            CookieSpawner.Tick();
+
             //Generate cookies from investments
             investments.ForEach(i => i.Generate());
 

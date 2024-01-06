@@ -109,6 +109,8 @@ namespace CookieClicker
             scale.ScaleX = 0.8;
             scale.ScaleY = 0.8;
 
+            CookieSpawner.Spawn();
+
             GameCore.AddCookies(1, "cookies");
         }
 
