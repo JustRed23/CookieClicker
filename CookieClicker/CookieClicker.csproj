@@ -38,6 +38,8 @@
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL" />
+    <Reference Include="System.Text.Json, Version=7.0.0.3, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -69,6 +71,7 @@
     <Compile Include="investment\items\Grandma.cs" />
     <Compile Include="investment\items\Mine.cs" />
     <Compile Include="investment\items\Temple.cs" />
+    <Compile Include="QuestManager.cs" />
     <Compile Include="References.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -101,6 +104,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="assets\quests.json" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -112,7 +116,7 @@
   <ItemGroup>
     <Resource Include="assets\default\bg.png" />
     <Resource Include="assets\default\cookie.png" />
-	<Resource Include="assets\default\golden_cookie.png" />
+    <Resource Include="assets\default\golden_cookie.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="assets\default\investments\bank.png" />

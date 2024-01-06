@@ -77,14 +77,17 @@ namespace CookieClicker
         /// Adds cookies to the total amount of cookies.
         /// </summary>
         /// <param name="amount">The amount of cookies to add</param>
-        public static void AddCookies(double amount)
+        public static void AddCookies(double amount, string sender = null)
         {
             if (timer == null) return;
             if (amount < 0) throw new ArgumentOutOfRangeException(nameof(amount), "Amount must be positive.");
 
             Cookies += amount;
             TotalCookies += amount;
+
             UpdateComponents();
+
+            if (sender != null) QuestManager.CheckProgress(ActionType.Generate, sender);
         }
 
         /// <summary>
@@ -151,6 +154,8 @@ namespace CookieClicker
                 previousCookies = Cookies;
 
                 UpdateComponents();
+
+                QuestManager.CheckProgress(ActionType.CPS);
             }
 
             //Increment the tick counter, reset it if it's too high
@@ -169,6 +174,26 @@ namespace CookieClicker
                 //Update the shop buttons
                 investments.ForEach(i => i.Update());
             });
+        }
+
+        /// <summary>
+        /// Get the current amount of a certain investment.
+        /// </summary>
+        /// <param name="investmentName">The investment</param>
+        /// <returns>The amount of that investment or 0 if not found</returns>
+        public static int GetAmount(string investmentName)
+        {
+            if (investmentName == "cookies") return (int)Cookies;
+
+            foreach (Investment investment in investments)
+            {
+                if (investment.Name.ToLower() == investmentName.ToLower())
+                {
+                    return investment.Amount;
+                }
+            }
+
+            return 0;
         }
     }
 }

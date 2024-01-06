@@ -35,7 +35,7 @@ namespace CookieClicker.investment
 
         public void Generate()
         {
-            if (Amount > 0) GameCore.AddCookies((Amount * output) * Multiplier);
+            if (Amount > 0) GameCore.AddCookies((Amount * output) * Multiplier, Name);
         }
 
         public void Update()
@@ -56,6 +56,8 @@ namespace CookieClicker.investment
             Amount++;
             Price = Math.Round(initialPrice * Math.Pow(1.15, Amount));
             category.OnBuy();
+
+            QuestManager.CheckProgress(ActionType.Buy, Name, Amount);
         }
 
         public void BuyMultiplier()

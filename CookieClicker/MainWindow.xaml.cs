@@ -27,6 +27,7 @@ namespace CookieClicker
         {
             Instance = this;
             Assets.Load();
+            QuestManager.Load();
             InitializeComponent();
         }
 
@@ -104,7 +105,7 @@ namespace CookieClicker
             scale.ScaleX = 0.8;
             scale.ScaleY = 0.8;
 
-            GameCore.AddCookies(1);
+            GameCore.AddCookies(1, "cookies");
         }
 
         private void Cookie_Released()

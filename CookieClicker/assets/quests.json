@@ -1,0 +1,173 @@
+{
+  "quests": [
+    {
+      "name": "New beginnings",
+      "description": "Collected your first cookie",
+      "goal": "cookies>1"
+    },
+    {
+      "name": "Making some dough",
+      "description": "Collected 100 cookies",
+      "goal": "cookies>100"
+    },
+    {
+      "name": "So baked right now",
+      "description": "Collected 1,000 cookies",
+      "goal": "cookies>1000"
+    },
+    {
+      "name": "A small loan",
+      "description": "Collected 1,000,000 cookies",
+      "goal": "cookies>1000000"
+    },
+
+
+
+    {
+      "name": "Baker's dozen",
+      "description": "Collected 13 cookies per second",
+      "goal": "cps>13"
+    },
+    {
+      "name": "Cookie monster",
+      "description": "Collected 100 cookies per second",
+      "goal": "cps>100"
+    },
+    {
+      "name": "Sugar rush",
+      "description": "Collected 1000 cookies per second",
+      "goal": "cps>1000"
+    },
+    {
+      "name": "Free cookie generator, no virus",
+      "description": "Collected 10,000 cookies per second",
+      "goal": "cps>10000"
+    },
+
+
+
+    {
+      "name": "Autoclicker",
+      "description": "Collected 10 cursors",
+      "goal": "cursor>10"
+    },
+    {
+      "name": "Gaming mouse",
+      "description": "Collected 100 cursors",
+      "goal": "cursor>100"
+    },
+    {
+      "name": "The Digital Age",
+      "description": "Collected 1,000 cursors",
+      "goal": "cursor>1000"
+    },
+
+
+
+    {
+      "name": "Grandma's cookies",
+      "description": "Collected 10 grandmas",
+      "goal": "grandma>10"
+    },
+    {
+      "name": "Sweatshop",
+      "description": "Collected 100 grandmas",
+      "goal": "grandma>100"
+    },
+    {
+      "name": "An unusual family tree",
+      "description": "Collected 1,000 grandmas",
+      "goal": "grandma>1000"
+    },
+
+
+
+    {
+      "name": "Good soil",
+      "description": "Collected 10 farms",
+      "goal": "farm>10"
+    },
+    {
+      "name": "Homegrown",
+      "description": "Collected 100 farms",
+      "goal": "farm>100"
+    },
+    {
+      "name": "Golden fields",
+      "description": "Collected 1,000 farms",
+      "goal": "farm>1000"
+    },
+
+
+
+    {
+      "name": "Rusty pipes",
+      "description": "Collected 10 mines",
+      "goal": "mine>10"
+    },
+    {
+      "name": "Extraction",
+      "description": "Collected 100 mines",
+      "goal": "mine>100"
+    },
+    {
+      "name": "You know the drill",
+      "description": "Collected 1000 mines",
+      "goal": "mine>1000"
+    },
+
+
+
+    {
+      "name": "Factory",
+      "description": "Collected 10 factories",
+      "goal": "factory>10"
+    },
+    {
+      "name": "Industrial revolution",
+      "description": "Collected 100 factories",
+      "goal": "factory>100"
+    },
+    {
+      "name": "Global warming",
+      "description": "Collected 1,000 factories",
+      "goal": "factory>1000"
+    },
+
+
+
+    {
+      "name": "Small vault",
+      "description": "Collected 10 banks",
+      "goal": "bank>10"
+    },
+    {
+      "name": "Accountant",
+      "description": "Collected 100 banks",
+      "goal": "bank>100"
+    },
+    {
+      "name": "Gold rush",
+      "description": "Collected 1,000 banks",
+      "goal": "bank>1000"
+    },
+
+
+
+    {
+      "name": "In the money",
+      "description": "Collected 10 temples",
+      "goal": "temple>10"
+    },
+    {
+      "name": "Sacrifices must be made",
+      "description": "Collected 100 temples",
+      "goal": "temple>100"
+    },
+    {
+      "name": "New-age cult",
+      "description": "Collected 1,000 temples",
+      "goal": "temple>1000"
+    }
+  ]
+}
