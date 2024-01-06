@@ -4,12 +4,15 @@ using System.IO;
 using System.Reflection;
 using System.Text.Json.Nodes;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace CookieClicker
 {
     internal static class QuestManager
     {
         private static readonly List<Quest> quests = new List<Quest>();
+        private static int completeCount = 0;
 
         public static void Load()
         {
@@ -62,7 +65,7 @@ namespace CookieClicker
                     string[] split = quest.Goal.Split('>');
                     double goal = double.Parse(split[1]);
 
-                    if (cps >= goal) quest.Complete();
+                    if (cps >= goal) quest.Complete(++completeCount);
                 }
             }
         }
@@ -77,7 +80,7 @@ namespace CookieClicker
                     string[] split = quest.Goal.Split('>');
                     int goal = int.Parse(split[1]);
 
-                    if (sender == split[0] && GameCore.GetAmount(sender) >= goal) quest.Complete();
+                    if (sender == split[0] && GameCore.GetAmount(sender) >= goal) quest.Complete(++completeCount);
                 }
             }
         }
@@ -92,7 +95,7 @@ namespace CookieClicker
                     string[] split = quest.Goal.Split('>');
                     int goal = int.Parse(split[1]);
 
-                    if (sender == split[0] && count >= goal) quest.Complete();
+                    if (sender == split[0] && count >= goal) quest.Complete(++completeCount);
                 }
             }
         }
@@ -139,12 +142,39 @@ namespace CookieClicker
             Goal = goal;
         }
 
-        public void Complete()
+        public void Complete(int completeCount)
         {
             Completed = true;
             MessageBox.Show(Description, $"Quest completed: {Name}", MessageBoxButton.OK, MessageBoxImage.Information);
 
-            //TODO: quest history
+            MainWindow.Instance.Dispatcher.Invoke(() =>
+            {
+                WrapPanel combined = new WrapPanel();
+                combined.Orientation = Orientation.Horizontal;
+                combined.Margin = new Thickness(0, 0, 0, 5);
+                combined.Background = new SolidColorBrush(Color.FromRgb(101, 67, 33));
+                combined.HorizontalAlignment = HorizontalAlignment.Stretch;
+                combined.VerticalAlignment = VerticalAlignment.Center;
+
+                TextBlock number = new TextBlock() { Text = completeCount.ToString(), FontSize = 28, FontWeight = FontWeights.Bold, TextAlignment = TextAlignment.Center, VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(10, 0, 10, 0) };
+
+                Border border = new Border();
+                border.BorderThickness = new Thickness(0, 0, 2, 0);
+                border.CornerRadius = new CornerRadius(0, 0, 10, 0);
+                border.BorderBrush = MainWindow.Instance.Foreground;
+                border.Child = number;
+                combined.Children.Add(border);
+
+                WrapPanel panel = new WrapPanel();
+                panel.Margin = new Thickness(5, 0, 0, 0);
+                panel.VerticalAlignment = VerticalAlignment.Center;
+                panel.Orientation = Orientation.Vertical;
+                panel.Children.Add(new TextBlock() { Text = Name, FontSize = 20, FontWeight = FontWeights.Bold });
+                panel.Children.Add(new TextBlock() { Text = Description, FontSize = 14, TextWrapping = TextWrapping.WrapWithOverflow });
+                combined.Children.Add(panel);
+
+                References.QUEST_LIST.Children.Add(combined);
+            });
         }
     }
 }

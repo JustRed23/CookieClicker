@@ -77,7 +77,11 @@ namespace CookieClicker
 
             //Set up shop buttons
             References.SHOP_BUTTON.Click += (s, ev) => ShowWindow(References.SHOP);
-            References.CLOSE_BUTTON.Click += (s, ev) => ShowWindow(References.MAINWINDOW);
+            References.CLOSE_SHOP.Click += (s, ev) => ShowWindow(References.MAINWINDOW);
+
+            //Set up the quest button
+            References.QUESTS_BUTTON.Click += (s, ev) => ShowWindow(References.QUESTS);
+            References.CLOSE_QUESTS.Click += (s, ev) => ShowWindow(References.MAINWINDOW);
 
             //Add all investments
             GameCore.AddInvestment(new Cursor());
