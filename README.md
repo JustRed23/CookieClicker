@@ -8,6 +8,7 @@ A pretty basic WPF project for my school
 - [ ] Add more documentation
 
 ## Tasks
+Every task is a commit, so you can see the progress of the project by clicking on the task.
 
 ### Iteration 1
 - [X] [CC01](https://github.com/JustRed23/CookieClicker/commit/48dd25023b788edd083c0c639ffa85771154e0a0)
@@ -47,4 +48,4 @@ A pretty basic WPF project for my school
 - [X] [CC29](https://github.com/JustRed23/CookieClicker/commit/b13f4ca5816d6bac1745874a5cc57c8be2c65e58)
 - [X] [CC30](https://github.com/JustRed23/CookieClicker/commit/7adffe79c8435586223c2d58ffedb990077324ca)
 - [X] [CC31](https://github.com/JustRed23/CookieClicker/commit/5298436090eb36f2b1d77be58755be2e663e96a9)
-- [ ] CC32
+- [X] [CC32](https://github.com/JustRed23/CookieClicker/commit/2056cfdaeaed4f5c699df1992d4d6fda32d8003e)
