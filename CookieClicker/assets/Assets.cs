@@ -12,7 +12,7 @@ namespace CookieClicker.assets
 
         public static BitmapImage BACKGROUND;
         public static BitmapImage COOKIE;
-        public static BitmapImage SHOP;
+        public static BitmapImage GOLDEN_COOKIE;
 
         public static void Load()
         {
@@ -25,7 +25,7 @@ namespace CookieClicker.assets
 
             BACKGROUND = LoadImageOrDefault("bg.png");
             COOKIE = LoadImageOrDefault("cookie.png");
-            //SHOP = LoadImageOrDefault("shop.png");
+            GOLDEN_COOKIE = LoadImageOrDefault("golden_cookie.png");
         }
 
         public static BitmapImage GetImage(string image)

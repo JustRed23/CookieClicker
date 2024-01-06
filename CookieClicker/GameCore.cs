@@ -1,7 +1,11 @@
-﻿using CookieClicker.investment;
+﻿using CookieClicker.assets;
+using CookieClicker.investment;
 using System;
 using System.Collections.Generic;
 using System.Timers;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace CookieClicker
 {
@@ -99,6 +103,43 @@ namespace CookieClicker
         private static void Update()
         {
             //1 tick = 10ms
+            
+            //Try spawning a golden cookie every minute
+            if (ticks != 0 && ticks % 6000 == 0)
+            {
+                if (new Random().Next(0, 100) < 30)
+                {
+                    References.MAINWINDOW.Dispatcher.Invoke(() =>
+                    {
+                        Random random = new Random();
+                        Image goldenCookie = new Image();
+                        goldenCookie.Source = Assets.GOLDEN_COOKIE;
+                        goldenCookie.Width = 64;
+                        goldenCookie.Height = 64;
+
+                        //Add click event
+                        goldenCookie.MouseLeftButtonDown += (s, e) =>
+                        {
+                            //Add 15m worth of CPS
+                            AddCookies(CPS * 15 * 60);
+                            References.GOLDENCOOKIE.Children.Remove(goldenCookie);
+                        };
+
+                        //Set random rotation
+                        goldenCookie.RenderTransformOrigin = new Point(0.5, 0.5);
+                        double rotation = random.Next(0, 360);
+                        goldenCookie.RenderTransform = new RotateTransform(rotation);
+
+                        //Spawn the cookie at a random location
+                        double x = random.Next(0, (int)(MainWindow.Instance.Width - goldenCookie.Width));
+                        double y = random.Next(0, (int)(MainWindow.Instance.Height - goldenCookie.Height));
+                        Canvas.SetLeft(goldenCookie, x);
+                        Canvas.SetTop(goldenCookie, y);
+
+                        References.GOLDENCOOKIE.Children.Add(goldenCookie);
+                    });
+                }
+            }
 
             //Generate cookies from investments
             investments.ForEach(i => i.Generate());

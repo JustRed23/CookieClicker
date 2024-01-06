@@ -14,6 +14,9 @@
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
 
+            <!-- Golden Cookies -->
+            <Canvas Name="GoldenCookieSpawner" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Panel.ZIndex="999"/>
+
             <!-- Header -->
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                 <TextBlock Name="TxtBakery" FontSize="36" FontWeight="ExtraBold" MinWidth="360" HorizontalAlignment="Center" TextAlignment="Center"/>

@@ -112,6 +112,7 @@
   <ItemGroup>
     <Resource Include="assets\default\bg.png" />
     <Resource Include="assets\default\cookie.png" />
+	<Resource Include="assets\default\golden_cookie.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="assets\default\investments\bank.png" />
