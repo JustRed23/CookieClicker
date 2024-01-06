@@ -128,5 +128,8 @@
     <Resource Include="assets\default\investments\mine.png" />
     <Resource Include="assets\default\investments\temple.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\default\close.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

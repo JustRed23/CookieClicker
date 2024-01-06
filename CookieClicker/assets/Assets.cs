@@ -14,6 +14,8 @@ namespace CookieClicker.assets
         public static BitmapImage COOKIE;
         public static BitmapImage GOLDEN_COOKIE;
 
+        public static BitmapImage CLOSE_ICON;
+
         public static void Load()
         {
             Load(currentTexturePack);
@@ -26,6 +28,8 @@ namespace CookieClicker.assets
             BACKGROUND = LoadImageOrDefault("bg.png");
             COOKIE = LoadImageOrDefault("cookie.png");
             GOLDEN_COOKIE = LoadImageOrDefault("golden_cookie.png");
+
+            CLOSE_ICON = LoadImageOrDefault("close.png");
         }
 
         public static BitmapImage GetImage(string image)

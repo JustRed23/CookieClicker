@@ -78,10 +78,12 @@ namespace CookieClicker
             //Set up shop buttons
             References.SHOP_BUTTON.Click += (s, ev) => ShowWindow(References.SHOP);
             References.CLOSE_SHOP.Click += (s, ev) => ShowWindow(References.MAINWINDOW);
+            SetIcon(References.CLOSE_SHOP);
 
             //Set up the quest button
             References.QUESTS_BUTTON.Click += (s, ev) => ShowWindow(References.QUESTS);
             References.CLOSE_QUESTS.Click += (s, ev) => ShowWindow(References.MAINWINDOW);
+            SetIcon(References.CLOSE_QUESTS);
 
             //Add all investments
             GameCore.AddInvestment(new Cursor());
@@ -94,6 +96,14 @@ namespace CookieClicker
 
             //Set up the game
             GameCore.Init();
+        }
+
+        private void SetIcon(Button button)
+        {
+            button.Content = new Image() { Source = Assets.CLOSE_ICON };
+            button.Background = Brushes.Transparent;
+            button.BorderBrush = Brushes.Transparent;
+            button.BorderThickness = new Thickness(0);
         }
 
         /// <summary>
