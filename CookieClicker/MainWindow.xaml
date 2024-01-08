@@ -35,6 +35,9 @@
             
             <!-- Quest Button -->
             <Button Grid.Row="2" Name="BtnQuests" Content="Quests" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="50" Height="50" Margin="0,0,10,70" />
+
+            <!-- Stats Button -->
+            <Button Grid.Row="2" Name="BtnStats" Content="Stats" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="50" Height="50" Margin="0,0,70,10" />
         </Grid>
         
         <Grid Name="ShopGrid" Visibility="Hidden">

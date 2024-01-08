@@ -1,4 +1,6 @@
 ﻿using CookieClicker.assets;
+using System;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -10,6 +12,7 @@ namespace CookieClicker.investment
         private readonly Investment investment;
 
         private DockPanel panel;
+        private ToolTip toolTip;
         private TextBlock count;
         private TextBlock price;
 
@@ -36,6 +39,19 @@ namespace CookieClicker.investment
 
             bool hasEnoughMultiplier = investment.GetMultiplierPrice() <= GameCore.Cookies;
             multiplierPrice.Foreground = hasEnoughMultiplier ? multiplierText.Foreground : Brushes.Red;
+
+            UpdateTooltip();
+        }
+
+        private void UpdateTooltip()
+        {
+            StringBuilder tt = new StringBuilder();
+            tt.AppendLine($"Each {investment.Name} produces {Formatter.FormatCookies(investment.InitialCookiesPerSecond, null)} per second");
+            tt.AppendLine($"{investment.Amount} x {investment.Name} procudes {Formatter.FormatCookies(investment.CurrentCookiesPerSecond, null)} per second");
+            tt.AppendLine($"With a multiplier of x{investment.Multiplier}, each {investment.Name} produces {Formatter.FormatCookies(investment.CurrentCookiesPerSecond * investment.Multiplier, null)} per second");
+            tt.AppendLine($"This investment has generated a total of {Formatter.FormatCookies(Math.Round(investment.TotalOfType, 2), "cookies")}");
+
+            toolTip.Content = tt.ToString();
         }
 
         public void Create(Panel parent)
@@ -50,8 +66,8 @@ namespace CookieClicker.investment
                 if (investment.Price <= GameCore.Cookies) investment.Buy();
             };
 
-            ToolTip toolTip = new ToolTip();
-            toolTip.Content = $"Each {investment.Name} produces {Formatter.FormatCookies(investment.CookiesPerSecond, null)} per second";
+            toolTip = new ToolTip();
+            UpdateTooltip();
             panel.ToolTip = toolTip;
 
             Image image = new Image();

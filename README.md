@@ -49,3 +49,7 @@ Every task is a commit, so you can see the progress of the project by clicking o
 - [X] [CC30](https://github.com/JustRed23/CookieClicker/commit/7adffe79c8435586223c2d58ffedb990077324ca)
 - [X] [CC31](https://github.com/JustRed23/CookieClicker/commit/5298436090eb36f2b1d77be58755be2e663e96a9)
 - [X] [CC32](https://github.com/JustRed23/CookieClicker/commit/2056cfdaeaed4f5c699df1992d4d6fda32d8003e)
+
+### Iteration 4
+- [X] CC33
+- [X] CC34

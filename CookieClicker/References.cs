@@ -19,6 +19,7 @@ namespace CookieClicker
         public static Image      COOKIE_IMAGE  = MainWindow.Instance.ImgCookie;
         public static Button     SHOP_BUTTON   = MainWindow.Instance.BtnShop;
         public static Button     QUESTS_BUTTON = MainWindow.Instance.BtnQuests;
+        public static Button     STATS_BUTTON  = MainWindow.Instance.BtnStats;
 
         //Shop
         public static Grid       SHOP          = MainWindow.Instance.ShopGrid;

@@ -15,7 +15,11 @@ namespace CookieClicker
     internal static class QuestManager
     {
         private static readonly List<Quest> quests = new List<Quest>();
-        private static int completeCount = 0;
+        
+        /// <summary>
+        /// The amount of completed quests
+        /// </summary>
+        public static int CompletedQuests = 0;
 
         /// <summary>
         /// Loads the quests from the embedded quests.json file.
@@ -77,7 +81,7 @@ namespace CookieClicker
                     string[] split = quest.Goal.Split('>');
                     double goal = double.Parse(split[1]);
 
-                    if (cps >= goal) quest.Complete(++completeCount);
+                    if (cps >= goal) quest.Complete(++CompletedQuests);
                 }
             }
         }
@@ -92,7 +96,7 @@ namespace CookieClicker
                     string[] split = quest.Goal.Split('>');
                     int goal = int.Parse(split[1]);
 
-                    if (sender == split[0] && GameCore.GetAmount(sender) >= goal) quest.Complete(++completeCount);
+                    if (sender == split[0] && GameCore.GetAmount(sender) >= goal) quest.Complete(++CompletedQuests);
                 }
             }
         }
@@ -107,7 +111,7 @@ namespace CookieClicker
                     string[] split = quest.Goal.Split('>');
                     int goal = int.Parse(split[1]);
 
-                    if (sender == split[0] && count >= goal) quest.Complete(++completeCount);
+                    if (sender == split[0] && count >= goal) quest.Complete(++CompletedQuests);
                 }
             }
         }

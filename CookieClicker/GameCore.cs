@@ -48,6 +48,16 @@ namespace CookieClicker
         private static int ticks = 0;
 
         /// <summary>
+        /// The time that has passed in seconds
+        /// </summary>
+        public static int TimeInSeconds = 0;
+
+        /// <summary>
+        /// The amount of times a golden cookie was clicked
+        /// </summary>
+        public static int GoldenCookieClicks;
+
+        /// <summary>
         /// Initializes the game.
         /// </summary>
         /// <exception cref="InvalidOperationException">Thrown if the game has already been initialized.</exception>
@@ -125,6 +135,7 @@ namespace CookieClicker
         private static void Update()
         {
             //1 tick = 10ms
+            if (ticks % 100 == 0) TimeInSeconds++;
             
             //Try spawning a golden cookie every minute
             if (ticks != 0 && ticks % 6000 == 0)
@@ -144,6 +155,7 @@ namespace CookieClicker
                         {
                             //Add 15m worth of CPS
                             AddCookies(CPS * 15 * 60);
+                            GoldenCookieClicks++;
                             References.GOLDENCOOKIE.Children.Remove(goldenCookie);
                         };
 

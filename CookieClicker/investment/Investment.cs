@@ -20,11 +20,17 @@ namespace CookieClicker.investment
         protected double output = 1;
 
         /// <summary>
+        /// The total cookies produced by this investment
+        /// </summary>
+        public double TotalOfType = 0;
+
+        /// <summary>
         /// The amount of which the multiplier price increases, starts at 100, then 500, then increases by a factor of 10
         /// </summary>
         private long multiplierPriceMultiplier = 100;
 
-        public double CookiesPerSecond = 0;
+        public double InitialCookiesPerSecond = 0;
+        public double CurrentCookiesPerSecond = 0;
 
         public Investment(string name, double initialPrice, double output)
         {
@@ -36,7 +42,7 @@ namespace CookieClicker.investment
             this.Price = initialPrice;
             this.output = output;
 
-            this.CookiesPerSecond = 100 * output;
+            this.InitialCookiesPerSecond = 100 * output;
         }
 
         /// <summary>
@@ -44,7 +50,13 @@ namespace CookieClicker.investment
         /// </summary>
         public void Generate()
         {
-            if (Amount > 0) GameCore.AddCookies((Amount * output) * Multiplier, Name);
+            if (Amount > 0)
+            {
+                double generatedAmount = (Amount * output) * Multiplier;
+                GameCore.AddCookies(generatedAmount, Name);
+                TotalOfType += generatedAmount;
+                CurrentCookiesPerSecond = 100 * (Amount * output);
+            }
         }
 
         /// <summary>

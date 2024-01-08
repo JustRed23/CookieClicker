@@ -2,6 +2,7 @@
 using CookieClicker.investment.items;
 using Microsoft.VisualBasic;
 using System;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -22,6 +23,11 @@ namespace CookieClicker
         /// The scale transform used for the cookie image.
         /// </summary>
         private readonly ScaleTransform scale = new ScaleTransform();
+
+        /// <summary>
+        /// The amount of times manually clicked on a cookie
+        /// </summary>
+        private int manualCookieClicks;
 
         public MainWindow()
         {
@@ -89,6 +95,26 @@ namespace CookieClicker
             References.CLOSE_QUESTS.Click += (s, ev) => ShowWindow(References.MAINWINDOW);
             SetIcon(References.CLOSE_QUESTS);
 
+            //Set up the stats button
+            References.STATS_BUTTON.Click += (s, ev) =>
+            {
+                StringBuilder stats = new StringBuilder();
+                stats.AppendLine($"Current: {Formatter.FormatCookies(GameCore.Cookies, null)}");
+                stats.AppendLine($"Total: {Formatter.FormatCookies(GameCore.TotalCookies, null)}");
+
+                int seconds = GameCore.TimeInSeconds % 60;
+                int minutes = GameCore.TimeInSeconds / 60 % 60;
+                int hours = GameCore.TimeInSeconds / 60 / 60 % 60;
+
+                stats.AppendLine($"Time played: {hours.ToString("00") + ":" + minutes.ToString("00") + ":" + seconds.ToString("00")}");
+
+                stats.AppendLine($"Times clicked on cookie: {manualCookieClicks}");
+                stats.AppendLine($"Times clicked on golden cookie: {GameCore.GoldenCookieClicks}");
+                stats.AppendLine($"Completed quests: {QuestManager.CompletedQuests}");
+
+                MessageBox.Show(stats.ToString(), "Stats");
+            };
+
             //Add all investments
             GameCore.AddInvestment(new Cursor());
             GameCore.AddInvestment(new Grandma());
@@ -131,6 +157,8 @@ namespace CookieClicker
             scale.ScaleY = 0.8;
 
             CookieSpawner.Spawn();
+
+            manualCookieClicks++;
 
             GameCore.AddCookies(1, "cookies");
         }
